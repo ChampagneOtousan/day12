@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #box {
+        padding: 10% 5%;
+        border: 5px solid lightblue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <h2>Heading 2</h2>
+    </div>
+    <script>
+    let div = document.getElementById("box")
+    div.addEventListener("dblclick", function() {
+      div.style.borderColor = "red"
+      div.style.width = "50%"
+    })
+    div.addEventListener("click", function() {
+      div.style.color = "white"
+      div.style.backgroundColor = "blue"
+      div.innerText = "You clicked on this element"
+    })
+
+    div.addEventListener("mouseout", function() {
+      document.body.style.backgroundColor = "black"
+    })
+    </script>
+  </body>
+</html>
