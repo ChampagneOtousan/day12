@@ -3,32 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style>
-      #box {
-        padding: 10% 5%;
-        border: 5px solid lightblue;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <div id="box">
-      <h2>Heading 2</h2>
-    </div>
-    <script>
-    let div = document.getElementById("box")
-    div.addEventListener("dblclick", function() {
-      div.style.borderColor = "red"
-      div.style.width = "50%"
-    })
-    div.addEventListener("click", function() {
-      div.style.color = "white"
-      div.style.backgroundColor = "blue"
-      div.innerText = "You clicked on this element"
-    })
+    <div id="messageArea"></div>
+    <h2>Log in</h2>
+    <form class="" action="index.html" method="post">
+      <input type="text" id="email-input" placeholder="Enter Email Address">
+      <input type="password" id="password-input" placeholder="Enter Password"required>
+      <input type="submit" value="Log in"required>
+    </form>
 
-    div.addEventListener("mouseout", function() {
-      document.body.style.backgroundColor = "black"
+    <script>
+    displayError1 = () => {
+      let messageArea = document.querySelector("#messageArea")
+      let user = {
+      email: "estebanito@platano.com"
+      password: "password1"
+    }
+  }
+    let form = document.querySelector("#loginForm")
+    form.addEventListener("submit", function() {
+      let email = document.querySelector("#email-input").value
+      let pwd = document.querySelector("#password-input").value
+      if (email == user.email && password == user.passowrd) {
+        alert("Thank you for loggin in!")
+      }  else {
+        event.preventDefault()
+        displayError1()
+      }
+      console.log(`Email: ${email}\nPassword ${pwd}`)
+      alert("Thank you for loggin in")
     })
     </script>
   </body>
